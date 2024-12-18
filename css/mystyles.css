@@ -1,0 +1,78 @@
+body{
+    background-color: rgb(218, 176, 104);
+    background-image: url('https://wallpapers.com/images/hd/breathtaking-japanese-nature-waterfalls-temple-sgs621tqphl4qyup.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* Change color for header top text */
+.section-heading-upper {
+    color: #3b3b3b; /* Replace with your desired color */
+    font-size: 1.5rem; /* Adjust size if needed */
+}
+/* Change color for header bottom text */
+.section-heading-lower {
+    color: #000000; /* Replace with your desired color */
+    font-size: 3rem; /* Adjust size if needed */
+    font-weight: bold; /* Make it bold */
+    letter-spacing: 2px; /* Add spacing between letters */
+}
+.float-container {
+    overflow: hidden;  /* Clear the floats */
+    text-align: center;
+}  
+  .float-image {
+    float: center;  /* Float the images to the center */
+    width: 45%;  /* Adjust the image width */
+    margin-right: 10px;  /* Optional: Space between images */
+    margin-bottom: 10px;  /* Optional: Space below the images */
+}  
+p{
+    font-weight: bold;
+}
+a:visited{
+    color: darkred;
+}
+.about-heading-img {
+    margin-bottom: 20px;
+}
+img{
+    width: 400px; /* Change to your desired width */
+    height: 400px; /* Change to your desired height */
+    object-fit: cover; /* Ensures images keep proportions and fill the box */
+    border: rgb(214, 190, 148) 3px solid;
+    padding: 5px;
+    margin-bottom: 20px; /* Adjust this value for spacing */
+}
+ul > li:hover{
+    background-color: rgb(218, 147, 25);
+}
+a{
+    color: rgb(177, 125, 62);
+}
+.common{
+    position: absolute;
+    padding: 5px;
+    margin: 5px;
+}
+.bottom{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+    font-style: italic;
+    font-size: 50%;
+}
+.top{
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+}
+.content{
+    top: 150px;
+    bottom: 50px;
+    left: 0px;
+    right: 0px;
+}

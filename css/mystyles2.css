@@ -1,0 +1,109 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+ol, ul {
+    margin: 0;         
+    padding-left: 20px;
+}
+
+ol ul {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 30px; 
+}
+
+.skills-container {
+    padding: 10px;       
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background-color: #4d4d4d;
+    color: #333;
+    line-height: 1.6;
+}
+
+.header {
+    background-color: darkcyan;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+.nav a {
+    color: #ffffff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+/* Content Sections */
+.content {
+    margin: 20px auto;
+    padding: 20px;
+    justify-content: center;  /* Centers content horizontally */
+    align-items: center;
+    background: #d9d9d9;
+    border: 1px solid #333;
+    border-radius: 5px;
+    max-width: 800px;
+}
+
+h2 {
+    color: darkcyan;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* Center Images */
+.center-image {
+    display: block;
+    margin: 10px auto;
+    width: 60%;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+.tableauPlaceholder {
+    position: relative; /* Keeps the aspect ratio */
+    text-align: center;
+    width: 100%;        /* Full width of the container */
+    padding-bottom: 56.25%; /* Aspect ratio: 16:9 (height/width) */
+    height: 0;          /* Ensures height is 0 to use padding */
+    overflow: hidden;    /* Hide any overflow */
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: darkcyan;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Quiz Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .options button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            width: 200px;
+            border-radius: 5px;
+        }
+        .options button:hover {
+            background-color: #45a049;
+        }
+        .score {
+            font-size: 20px;
+            margin: 20px;
+        }
+        .timer {
+            font-size: 18px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<a href="https://jarsmasher9000.github.io/IS201WebDev_Project/from-scratch.html" class="back-link">← Back to Scratch Page</a>
+
+<div class="container">
+    <h1>Trivia Quiz Game</h1>
+    <div class="score">Score: <span id="score">0</span></div>
+    <div class="timer">Time Left: <span id="time">30</span> seconds</div>
+    <div class="question" id="question"></div>
+    <div class="options" id="options"></div>
+    <button id="next" style="display: none;" onclick="nextQuestion()">Next Question</button>
+</div>
+
+<script>
+    let currentQuestion = 0;
+    let score = 0;
+    let timeLeft = 30;
+    let timer;
+
+    const questions = [
+        { question: "What is the capital of France?", options: ["Paris", "London", "Rome", "Berlin"], answer: "Paris" },
+        { question: "Who developed the theory of relativity?", options: ["Newton", "Einstein", "Galileo", "Tesla"], answer: "Einstein" },
+        { question: "What is the largest planet in our solar system?", options: ["Earth", "Mars", "Jupiter", "Saturn"], answer: "Jupiter" },
+        { question: "What is the old capital of Japan?", options: ["Tokyo", "Kyoto", "Osaka", "Hiroshima"], answer: "Kyoto" }
+    ];
+
+    function startTimer() {
+        timer = setInterval(() => {
+            if (timeLeft > 0) {
+                timeLeft--;
+                document.getElementById("time").textContent = timeLeft;
+            } else {
+                clearInterval(timer);
+                nextQuestion();
+            }
+        }, 1000);
+    }
+
+    function loadQuestion() {
+        const questionData = questions[currentQuestion];
+        document.getElementById("question").textContent = questionData.question;
+        const options = document.getElementById("options");
+        options.innerHTML = "";
+        questionData.options.forEach(option => {
+            const button = document.createElement("button");
+            button.textContent = option;
+            button.onclick = () => checkAnswer(option);
+            options.appendChild(button);
+        });
+        document.getElementById("next").style.display = "none";
+        startTimer();
+    }
+
+    function checkAnswer(selectedOption) {
+        const questionData = questions[currentQuestion];
+        if (selectedOption === questionData.answer) {
+            score++;
+            document.getElementById("score").textContent = score;
+        }
+        clearInterval(timer);
+        document.getElementById("next").style.display = "block";
+    }
+
+    function nextQuestion() {
+        currentQuestion++;
+        if (currentQuestion < questions.length) {
+            loadQuestion();
+        } else {
+            document.getElementById("question").textContent = "Quiz Over! Your score is " + score;
+            document.getElementById("options").innerHTML = "";
+            document.getElementById("next").style.display = "none";
+        }
+    }
+
+    loadQuestion();
+</script>
+
+</body>
+</html>
